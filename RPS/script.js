@@ -54,6 +54,12 @@ for (const button of rounds) {
         // 5 rounds -> 3 wins
         winningScore = Math.ceil(maxRounds / 2);
 
+        //Hide Start Screen
+        document.getElementById("startScreen").style.display="none";
+
+        //Show Game Screen
+        document.getElementById("gameScreen").style.display="block";
+
         // Remove the highlight from every round button
         for (const roundButton of rounds) {
             roundButton.classList.remove("selectedRound");

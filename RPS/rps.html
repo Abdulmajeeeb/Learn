@@ -69,7 +69,8 @@
             font-size: 40px;
             margin: 20px;
         }
-         #winLoss {
+
+        #winLoss {
             text-align: center;
             font-size: 40px;
             margin: 20px;
@@ -92,44 +93,80 @@
             color: white;
             cursor: pointer;
         }
+
+        #gameScreen {
+            display: none;
+        }
+
+        #rules {
+            font-size: 35px;
+            text-align: left;
+            vertical-align: middle;
+            margin-left: 60px;
+
+        }
+        #reset{
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <h1>Rock-Paper-Scissors-Lizard-Spock</h1>
-    <div id="rounds">
-        <button data-round="3">Best of 3</button>
-        <button data-round="5">Best of 5</button>
-        <button data-round="7">Best of 7</button>
-        <button data-round="999">Unlimited</button>
+    <div id="startScreen">
+        <div id="rounds">
+            <button data-round="3">Best of 3</button>
+            <button data-round="5">Best of 5</button>
+            <button data-round="7">Best of 7</button>
+            <button data-round="999">Unlimited</button>
+        </div>
+        <div>
+            <h1>Rules</h1>
+            <ul id="rules">
+                <li>Scissors cuts paper</li>
+                <li>Paper covers rock</li>
+                <li>Rock crushes lizard</li>
+                <li>Lizard poisons Spock</li>
+                <li>Spock smashes scissors</li>
+                <li>Scissors decapitates lizard</li>
+                <li>Lizard eats paper</li>
+                <li>Paper disproves Spock</li>
+                <li>Spock vaporizes rock</li>
+                <li>Rock crushes scissors</li>
+            </ul>
+        </div>
     </div>
-    <table>
-        <thead>
-            <td class="head">Player</td>
-            <td class="head">AI</td>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="playerScore">Score = 0</td>
-                <td id="computerScore">Score = 0</td>
-            </tr>
-            <tr>
-                <td id="playerChoice"></td><!--User Input-->
-                <td id="computerChoice"></td><!--Computer Input-->
-            </tr>
-        </tbody>
-    </table>
-    <p id="status">Choose Your Weapon!</p>
-    <p id="winLoss"></p>
-    <p id="count">Game Count = 0</p>
-    <div id="options">
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
-        <button>Lizard</button>
-        <button>Spock</button>
+    <div id="gameScreen">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="playerScore">Score = 0</td>
+                    <td id="computerScore">Score = 0</td>
+                </tr>
+                <tr>
+                    <td class="head">Player</td>
+                    <td class="head">AI</td>
+                </tr>
+                <tr>
+                    <td id="playerChoice"></td><!--User Input-->
+                    <td id="computerChoice"></td><!--Computer Input-->
+                </tr>
+            </tbody>
+        </table>
+        <p id="status">Choose Your Weapon!</p>
+        <p id="winLoss"></p>
+        <p id="count">Game Count = 0</p>
+        <div id="options">
+            <button>Rock</button>
+            <button>Paper</button>
+            <button>Scissors</button>
+            <button>Lizard</button>
+            <button>Spock</button>
+        </div>
+        <button id="reset">Reset</button>
     </div>
-    <button id="reset">Reset</button>
+
+
     <dialog id="gameOver">
         <h1>Game Over</h1>
         <h3 id="conclusion"></h3>
