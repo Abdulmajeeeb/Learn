@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSLS</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+
+        }
+
+        td.head {
+            width: 200px;
+            height: 100px;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            border: 0px solid black;
+            user-select: none;
+        }
+
+        td:nth-child(2) {
+            border-left: 2px solid black;
+        }
+
+        td {
+            width: 200px;
+            height: 100px;
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            border: 0px solid black;
+            user-select: none;
+        }
+
+        .selectedRound {
+            background-color: green;
+        }
+
+
+        #status {
+            text-align: center;
+            font-size: 50px;
+            margin: 20px;
+        }
+
+        #count {
+            text-align: center;
+            font-size: 40px;
+            margin: 20px;
+        }
+         #winLoss {
+            text-align: center;
+            font-size: 40px;
+            margin: 20px;
+        }
+
+        dialog {
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 24px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rock-Paper-Scissors-Lizard-Spock</h1>
+    <div id="rounds">
+        <button data-round="3">Best of 3</button>
+        <button data-round="5">Best of 5</button>
+        <button data-round="7">Best of 7</button>
+        <button data-round="999">Unlimited</button>
+    </div>
+    <table>
+        <thead>
+            <td class="head">Player</td>
+            <td class="head">AI</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="playerScore">Score = 0</td>
+                <td id="computerScore">Score = 0</td>
+            </tr>
+            <tr>
+                <td id="playerChoice"></td><!--User Input-->
+                <td id="computerChoice"></td><!--Computer Input-->
+            </tr>
+        </tbody>
+    </table>
+    <p id="status">Choose Your Weapon!</p>
+    <p id="winLoss"></p>
+    <p id="count">Game Count = 0</p>
+    <div id="options">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissors</button>
+        <button>Lizard</button>
+        <button>Spock</button>
+    </div>
+    <button id="reset">Reset</button>
+    <dialog id="gameOver">
+        <h1>Game Over</h1>
+        <h3 id="conclusion"></h3>
+        <button onclick="document.getElementById('gameOver').close()">Close</button>
+    </dialog>
+
+
+
+
+
+
+
+    <script src="nlogic.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
