@@ -1,14 +1,14 @@
-// const readline = require('node:readline/promises');
-// const { stdin, stdout } = require('node:process');
+const readline = require('node:readline/promises');
+const { stdin, stdout } = require('node:process');
 
-//const { winner, name } = require('./nlogic');
+const { winner, name } = require('./nlogic');
 
-//async function askQuestion(inputPrompt) {
-    //const rl = readline.createInterface({ input: stdin, output: stdout });
-    //const answer = await rl.question(inputPrompt);
-    //rl.close();
-    //return answer;
-//}
+async function askQuestion(inputPrompt) {
+    const rl = readline.createInterface({ input: stdin, output: stdout });
+    const answer = await rl.question(inputPrompt);
+    rl.close();
+    return answer;
+}
 const status= document.getElementById("status");
 const optionButtons = document.querySelectorAll("#options button");
 
