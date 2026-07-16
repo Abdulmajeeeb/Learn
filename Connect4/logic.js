@@ -11,6 +11,9 @@ let COLS = 7;
 // Number of consecutive pieces required to win.
 let WIN = 4;
 
+// Empty Cells
+let empty=".";
+
 // -----------------------------------------------------------------------------
 // Game Board
 // -----------------------------------------------------------------------------
@@ -26,7 +29,7 @@ for (let i = 0; i < ROWS; i++) {
 
     // Fill the row with empty cells.
     for (let j = 0; j < COLS; j++) {
-        table[i].push(".");
+        table[i].push(empty);
     }
 }
 
@@ -46,7 +49,7 @@ function updateTable(col, value) {
     for (let i = ROWS - 1; i > -1; i--) {
 
         // Place the piece in the first available position.
-        if (table[i][col] === ".") {
+        if (table[i][col] === empty) {
             table[i][col] = value;
             return true;
         }
@@ -146,7 +149,7 @@ function gameEnd() {
     // -------------------------------------------------------------------------
     for (i = 0; i < ROWS - (WIN - 1); i++) {
 
-        for (j = 3; j < COLS; j++) {
+        for (j = WIN-1; j < COLS; j++) {
 
             let aDiagonalString = "";
 
@@ -175,7 +178,7 @@ function gameEnd() {
 // -----------------------------------------------------------------------------
 // Resets the game board.
 //
-// Every occupied position is replaced with "." so that a new game
+// Every occupied position is replaced with empty so that a new game
 // starts with an empty board.
 // -----------------------------------------------------------------------------
 function resetTable() {
@@ -184,7 +187,7 @@ function resetTable() {
 
         for (j = 0; j < COLS; j++) {
 
-            table[i][j] = ".";
+            table[i][j] = empty;
 
         }
     }

@@ -25,7 +25,6 @@ async function askQuestion(inputPrompt) {
     // Return the user's response.
     return answer;
 }
-
 // -----------------------------------------------------------------------------
 // Runs one complete game of Connect Four.
 // The function ends only when either player wins or the game is a draw.
