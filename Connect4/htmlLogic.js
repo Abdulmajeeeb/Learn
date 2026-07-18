@@ -34,7 +34,6 @@ for (let i = 0; i < ROWS; i++) {
         board[i].push(empty);
     }
 }
-console.log("initializeBoard")
 }
 
 // -----------------------------------------------------------------------------
@@ -47,7 +46,7 @@ console.log("initializeBoard")
 //      true  -> Piece successfully placed.
 //      false -> Selected column is already full.
 // -----------------------------------------------------------------------------
-function updateTable(col, value) {
+function updateBoard(col, value) {
 
     // Start from the bottom-most row.
     for (let i = ROWS - 1; i > -1; i--) {
@@ -185,7 +184,7 @@ function gameEnd() {
 // Every occupied position is replaced with empty so that a new game
 // starts with an empty board.
 // -----------------------------------------------------------------------------
-function resetTable() {
+function resetBoard() {
 
     for (let i = 0; i < ROWS; i++) {
 
@@ -202,10 +201,10 @@ function resetTable() {
 // inside other JavaScript files.
 // -----------------------------------------------------------------------------
 // module.exports = {
-//     updateTable,
+//     updateBoard,
 //     board,
 //     gameEnd,
 //     ROWS,
 //     COLS,
-//     resetTable
+//     resetBoard
 // };
