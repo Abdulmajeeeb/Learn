@@ -95,6 +95,7 @@ async function gameSystem() {
 
         // If every cell has been occupied, declare a draw.
         if (moves === ROWS * COLS) {
+            console.table(table);
             console.log("DRAW");
             break;
         }

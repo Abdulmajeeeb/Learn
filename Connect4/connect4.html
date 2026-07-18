@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect4</title>
+    <style>
+        td{
+            border: 2px solid black;
+        }
+        /* .startScreen{
+            display: block;
+        }
+        .gameScreen{
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>Connect-4</h1>
+    <!-- ----------------------------------------------- -->
+    <div class="startScreen">
+        <!-- ------------------------------------------- -->
+        <p>Welcome to Connect-4</p>
+        <ul>
+            <b>RULES:</b>
+            <li>Select any column to play your move.</li>
+            <li>Move can only be played in the last empty row.</li>
+            <b>To WIN:</b>
+            <li>Connect four values in any direction:</li>
+            <ol>
+                <li>Horizontal</li>
+                <li>Vertical</li>
+                <li>Primary Diagonal</li>
+                <li>Secondary Diagonal</li>
+            </ol>
+            <b>Difficulty:</b>
+            <li>Smaller boards are considered as easy.</li>
+            <li><code>6x7</code> is considered as normal.</li>
+            <li>Bigger boards make the game lengthy and diffcult.</li>
+        </ul>
+        <div id="boardSize">
+            <p>Select the board size to start your game!</p>
+            <button data-ROWS="4" data-COLS="4">4x4</button>
+            <button data-ROWS="5" data-COLS="5">5x5</button>
+            <button data-ROWS="6" data-COLS="7">6x7</button>
+            <button data-ROWS="7" data-COLS="7">7x7</button>
+            <button data-ROWS="8" data-COLS="8">8x8</button>
+            <button data-ROWS="8" data-COLS="10">8x10</button>
+            <button data-ROWS="10" data-COLS="10">10x10</button>
+            <button data-ROWS="12" data-COLS="12">12x12</button>
+        </div>
+    </div>
+    <!-- ----------------------------------------------- -->
+    <div class="gameScreen">
+        <!-- ------------------------------------------- -->
+        <table>
+            <tbody id="htmlBoard">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="htmlLogic.js"></script>
+    <script src="htmlScript.js"></script>
+
+</body>
+
+</html>
