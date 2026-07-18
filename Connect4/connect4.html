@@ -6,22 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect4</title>
     <style>
-        td{
-            border: 2px solid black;
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
         }
-        /* .startScreen{
+
+        #startScreen {
+            text-align: left;
+
+        }
+
+        #gameScreen {
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            text-align: center;
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        td {
+            border: 2px solid black;
+            width: 30px;
+            height: 30px;
+            padding: 3px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        #startScreen{
             display: block;
         }
-        .gameScreen{
+        #gameScreen{
             display: none;
-        } */
+        }
     </style>
 </head>
 
 <body>
     <h1>Connect-4</h1>
     <!-- ----------------------------------------------- -->
-    <div class="startScreen">
+    <div id="startScreen">
         <!-- ------------------------------------------- -->
         <p>Welcome to Connect-4</p>
         <ul>
@@ -54,8 +85,9 @@
         </div>
     </div>
     <!-- ----------------------------------------------- -->
-    <div class="gameScreen">
+    <div id="gameScreen">
         <!-- ------------------------------------------- -->
+        <button id="startScreenButton">Start Screen</button>
         <table>
             <tbody id="htmlBoard">
             </tbody>
