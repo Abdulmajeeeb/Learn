@@ -88,11 +88,15 @@ function gameEnd() {
         let lose = rowString.match(/🔴🔴🔴🔴/);
 
         if (win) {
-            return true;
+            return {
+                message:"Green Wins"
+            };
         }
 
         if (lose) {
-            return true;
+            return {
+                message:"Red Wins"
+            };
         }
     }
 
@@ -112,11 +116,15 @@ function gameEnd() {
         let lose = columnString.match(/🔴🔴🔴🔴/);
 
         if (win) {
-            return true;
+            return {
+                message:"Green Wins"
+            };
         }
 
         if (lose) {
-            return true;
+            return {
+                message:"Red Wins"
+            };
         }
     }
 
@@ -138,11 +146,15 @@ function gameEnd() {
             let lose = diagonalString.match(/🔴🔴🔴🔴/);
 
             if (win) {
-                return true;
+                return {
+                message:"Green Wins"
+            };
             }
 
             if (lose) {
-                return true;
+                return {
+                message:"Red Wins"
+            };
             }
         }
     }
@@ -165,11 +177,15 @@ function gameEnd() {
             let lose = aDiagonalString.match(/🔴🔴🔴🔴/);
 
             if (win) {
-                return true;
+                return {
+                message:"Green Wins"
+            };
             }
 
             if (lose) {
-                return true;
+                return {
+                message:"Red Wins"
+            };
             }
         }
     }

@@ -46,6 +46,7 @@
         #gameScreen{
             display: none;
         }
+
     </style>
 </head>
 
@@ -72,8 +73,8 @@
             <li><code>6x7</code> is considered as normal.</li>
             <li>Bigger boards make the game lengthy and diffcult.</li>
         </ul>
+                    <p>Select the board size to start your game!</p>
         <div id="boardSize">
-            <p>Select the board size to start your game!</p>
             <button data-rows="4" data-cols="4">4x4</button>
             <button data-rows="5" data-cols="5">5x5</button>
             <button data-rows="6" data-cols="7">6x7</button>
@@ -88,10 +89,17 @@
     <div id="gameScreen">
         <!-- ------------------------------------------- -->
         <button id="startScreenButton">Start Screen</button>
+        <p id="status"></p>
         <table>
             <tbody id="htmlBoard">
             </tbody>
         </table>
+        <button id="reset">Reset</button>
+        <dialog id="gameOverDialog">
+            <h1>Game Over</h1>
+            <p id="conclusion"></p>
+            <button onclick="document.getElementById('gameOverDialog').close()">Close</button>
+        </dialog>
     </div>
 
 
