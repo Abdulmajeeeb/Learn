@@ -75,7 +75,7 @@ function updateBoard(col, value) {
 //      true  -> Either player has connected four pieces.
 //      false -> No winner yet.
 // -----------------------------------------------------------------------------
-function gameEnd() {
+function winner() {
 
     // -------------------------------------------------------------------------
     // Check every row.
@@ -89,13 +89,13 @@ function gameEnd() {
 
         if (win) {
             return {
-                message:"Green Wins"
+                message:"🟢 Green Wins"
             };
         }
 
         if (lose) {
             return {
-                message:"Red Wins"
+                message:"🔴 Red Wins"
             };
         }
     }
@@ -117,13 +117,13 @@ function gameEnd() {
 
         if (win) {
             return {
-                message:"Green Wins"
+                message:"🟢 Green Wins"
             };
         }
 
         if (lose) {
             return {
-                message:"Red Wins"
+                message:"🔴 Red Wins"
             };
         }
     }
@@ -147,13 +147,13 @@ function gameEnd() {
 
             if (win) {
                 return {
-                message:"Green Wins"
+                message:"🟢 Green Wins"
             };
             }
 
             if (lose) {
                 return {
-                message:"Red Wins"
+                message:"🔴 Red Wins"
             };
             }
         }
@@ -178,13 +178,13 @@ function gameEnd() {
 
             if (win) {
                 return {
-                message:"Green Wins"
+                message:"🟢 Green Wins"
             };
             }
 
             if (lose) {
                 return {
-                message:"Red Wins"
+                message:"🔴 Red Wins"
             };
             }
         }
@@ -219,7 +219,7 @@ function resetBoard() {
 // module.exports = {
 //     updateBoard,
 //     board,
-//     gameEnd,
+//     winner,
 //     ROWS,
 //     COLS,
 //     resetBoard

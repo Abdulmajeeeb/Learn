@@ -5,49 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect4</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            user-select: none;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        #startScreen {
-            text-align: left;
-
-        }
-
-        #gameScreen {
-            text-align: center;
-        }
-
-        table {
-            margin: auto;
-            text-align: center;
-            border: 2px solid black;
-            border-collapse: collapse;
-            padding: 5px;
-        }
-
-        td {
-            border: 2px solid black;
-            width: 30px;
-            height: 30px;
-            padding: 3px;
-            text-align: center;
-            vertical-align: middle;
-            cursor: pointer;
-        }
-
-        #startScreen{
-            display: block;
-        }
-        #gameScreen{
-            display: none;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -91,7 +50,7 @@
         <button id="startScreenButton">Start Screen</button>
         <p id="status"></p>
         <table>
-            <tbody id="htmlBoard">
+            <tbody id="boardElement">
             </tbody>
         </table>
         <button id="reset">Reset</button>
