@@ -3,7 +3,7 @@ const { stdin, stdout } = require('node:process');
 
 // Import the game board, game logic functions, board dimensions,
 // and the function used to reset the board.
-const { table, updateTable, gameEnd, ROWS, COLS, resetTable } = require('./logic');
+const { table, updateTable, gameEnd, ROWS, COLS, resetTable } = require('./terminalLogic');
 
 // Counts the total number of successful moves played.
 let moves = 0;

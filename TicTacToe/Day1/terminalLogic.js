@@ -29,6 +29,7 @@ function resetTable(){
         ticTacToeTable[row]=["","",""];
     }
 }
+
 function gameEnd() {
     //Rows
     let row = 0;
