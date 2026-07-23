@@ -1,16 +1,21 @@
 let board = [];
-let percentBomb = 20;
-function makeBoard(rows, cols) {
+let table = [];
+let percentBomb = 15;
+
+function createBoard(rows, cols) {
+    //make board and table
+    board.length = 0;
+    table.length = 0;
     for (let i = 0; i < rows; i++) {
         board.push([]);
+        table.push([]);
         for (let j = 0; j < cols; j++) {
             board[i].push(0);
+            table[i].push("");
         }
     };
-    return;
-};
 
-function placeBombs(rows, cols) {
+    //place bombs
     let numberBomb = Number(Math.floor((percentBomb * rows * cols) / 100));
     for (let i = 0; i < numberBomb; i++) {
         let compRow = Number(Math.floor(Math.random() * rows));
@@ -22,12 +27,8 @@ function placeBombs(rows, cols) {
             board[compRow][compCol] = "x";
         }
     }
-    // console.table(board);
-    // console.log(numberBomb);
-};
 
-//Place neighbours
-function neighbours(rows, cols) {
+    // Calculate neighbour counts
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             if (board[i][j] === "x") {
@@ -50,20 +51,44 @@ function neighbours(rows, cols) {
             }
         }
     }
-    // console.table(board);
+}
+//Reveal a cell selected by the user
+function showCell(row, col) {
+    //if cell already revealed
+    if (table[row][col] === board[row][col]) {
+        return "repeat";
+
+    };
+    //update the table
+    table[row][col] = board[row][col];
+
+    //A bomb triggered
+    if (board[row][col] === "x") {
+        return "bomb";
+    }
+    return false;
 }
 
-
-// function gameEnd(){
-// if (displayTable(m,n)===bomb){
-//     return lose;
-// }
-// }
+function checkWin() {
+    const rows = board.length;
+    const cols = board[0].length;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (board[i][j] === "x") {
+                continue;
+            } else if (table[i][j] === "") {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
 module.exports = {
     board,
-    placeBombs,
-    makeBoard,
-    neighbours,
+    table,
+    createBoard,
+    showCell,
+    checkWin
     // gameEnd
 }
