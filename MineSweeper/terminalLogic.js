@@ -26,7 +26,7 @@ function createBoard(rows, cols) {
         } else {
             board[compRow][compCol] = "x";
         }
-    }
+    };
 
     // Calculate neighbour counts
     for (let i = 0; i < rows; i++) {
@@ -51,7 +51,7 @@ function createBoard(rows, cols) {
             }
         }
     }
-}
+};
 //Reveal a cell selected by the user
 function showCell(row, col) {
     //if cell already revealed
@@ -61,13 +61,16 @@ function showCell(row, col) {
     };
     //update the table
     table[row][col] = board[row][col];
+    if (table[row][col] === 0) {
+        floodFill(row, col);
+    }
 
     //A bomb triggered
     if (board[row][col] === "x") {
         return "bomb";
     }
     return false;
-}
+};
 
 function checkWin() {
     const rows = board.length;
@@ -82,13 +85,41 @@ function checkWin() {
         }
     }
     return true;
-}
+};
+
+function floodFill(i, j) {
+    const rows = board.length;
+    const cols = board[0].length;
+
+    if (board[i][j] === 0) {
+        for (let k = -1; k < 2; k++) {
+            const newRow = i + k;
+            for (let l = -1; l < 2; l++) {
+                const newCol = j + l;
+                if (k === 0 && l === 0) {
+                    continue;
+                } else if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols) {
+                    continue;
+                } else if (board[newRow][newCol] === "x") {
+                    continue;
+                } else if (table[newRow][newCol] !== "") {
+                    continue;
+                } else {
+                    table[newRow][newCol] = board[newRow][newCol]
+                };
+                if (table[newRow][newCol] === 0) {
+                    floodFill(newRow, newCol)
+                }
+            }
+        }
+    }
+};
 
 module.exports = {
     board,
     table,
     createBoard,
     showCell,
-    checkWin
-    // gameEnd
-}
+    checkWin,
+    floodFill
+};

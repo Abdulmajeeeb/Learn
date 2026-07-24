@@ -21,14 +21,16 @@ function updateTable(row, col, value) {
 };
 
 function gameEnd() {
+    //
+    let win=3;
     //Check rows
-    for (let row = 0; row < boardSize; row++) {
+    for (let row = 0; row < win; row++) {
         let first = ticTacToeTable[row][0];
         if (first === "") {
             continue;
         }
         let rowWin = true;
-        for (let col = 1; col < boardSize; col++) {
+        for (let col = 1; col < win; col++) {
             if (ticTacToeTable[row][col] !== first) {
                 rowWin = false;
                 break;
@@ -39,13 +41,13 @@ function gameEnd() {
         }
     };
     //Check columns
-    for (let col = 0; col < boardSize; col++) {
+    for (let col = 0; col < win; col++) {
         let first = ticTacToeTable[0][col];
         if (first === "") {
             continue;
         }
         let colWin = true;
-        for (let row = 1; row < boardSize; row++) {
+        for (let row = 1; row < win; row++) {
             if (ticTacToeTable[row][col] !== first) {
                 colWin = false;
                 break;
@@ -59,7 +61,7 @@ function gameEnd() {
     let diagonalFirst = ticTacToeTable[0][0];
     if (diagonalFirst !== "") {
         let diagonalWin = true;
-        for (let i = 1; i < boardSize; i++) {
+        for (let i = 1; i < win; i++) {
             if (ticTacToeTable[i][i] !== diagonalFirst) {
                 diagonalWin = false;
                 break;
@@ -70,11 +72,11 @@ function gameEnd() {
         }
     };
     //Check Anti-Diagonal
-    let antiDiagonalFirst = ticTacToeTable[0][boardSize - 1]
+    let antiDiagonalFirst = ticTacToeTable[0][win - 1]
     if (antiDiagonalFirst !== "") {
         let antiDiagonalWin = true;
-        for (let i = 1; i < boardSize; i++) {
-            if (antiDiagonalFirst !== ticTacToeTable[i][boardSize - 1 - i]) {
+        for (let i = 1; i < win; i++) {
+            if (antiDiagonalFirst !== ticTacToeTable[i][win - 1 - i]) {
                 antiDiagonalWin = false;
                 break;
             }

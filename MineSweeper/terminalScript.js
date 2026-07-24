@@ -5,14 +5,14 @@ let rows;
 let cols;
 
 // Calling API
-const { board, table, createBoard, showCell, checkWin } = require('./terminalLogic');
+const { board, table, createBoard, showCell, checkWin, floodFill } = require('./terminalLogic');
 
 async function askQuestion(inputPrompt) {
     const rl = readline.createInterface({ input: stdin, output: stdout });
     const answer = await rl.question(inputPrompt);
     rl.close();
     return answer;
-}
+};
 
 async function gameLoop() {
     while (true) {
