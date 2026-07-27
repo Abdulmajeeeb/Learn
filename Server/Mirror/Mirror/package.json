@@ -1,0 +1,13 @@
+{
+  "name": "mirror-api",
+  "version": "1.0.0",
+  "description": "A minimal multi-file HTTP server built with Node's core http module (no frameworks).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": ["node", "http", "api", "learning"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Mine Sweeper</h1>
+    <div id="startScreen">
+        <h2><u>Rules</u>:</h2>
+        <ul>
+            <li>Click a cell to reveal its contents.</li>
+            <li>A cell can contain one of the followings:</li>
+            <ul>
+                <li>Empty Cell</li>
+                <li>A Digit</li>
+                <li>A Mine</li>
+            </ul>
+            <li>Avoid the mines at all cost.</li>
+            <li>An empty cell shows that all of its neighbours are safe.</li>
+            <li>A number annouces the amount of <b>Mines</b> among its neighbours.</li>
+        </ul>
+        <h2><u>Difficulty</u>:</h2>
+        <p>Select the difficulty for your game.</p>
+        <div id="difficulty">
+            <button data-percent="10">Easy</button>
+            <button data-percent="20">Normal</button>
+            <button data-percent="35">Hard</button>
+        </div>
+        <h2><u>Board Size</u>:</h2>
+        <p>Select the board size for you game.</p>
+        <div id="size">
+            <button data-size="9">9 x 9</button>
+            <button data-size="15">15 x 15</button>
+            <button data-size="25">25 x 25</button>
+        </div>
+                <div id="start">
+            <button id="startGame">Start Game</button>
+        </div>
+    </div>
+    <div id="gameScreen">
+        <table id="gameTable">
+            <tbody id="renderBoard">
+            </tbody>
+        </table>
+        <div id="restart">
+            <button id="startScreenButton">Start Screen</button>
+            <button id="newGame">New Game</button>
+        </div>
+    </div>
+
+<script src="logic.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
