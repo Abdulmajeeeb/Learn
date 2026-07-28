@@ -1,4 +1,5 @@
 let size;
+let gameOver=false;
 const sizeButtons = document.querySelectorAll("#size button");
 for (const button of sizeButtons) {
     button.addEventListener("click", function () {
@@ -39,5 +40,9 @@ function renderBoard(rows,cols){
         }
         boardElement.appendChild(tr);
     }
+}
+
+function cellClicked(){
+    if (game)
 }
 

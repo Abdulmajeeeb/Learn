@@ -1,0 +1,3 @@
+Build a rest Api using the source material.
+1. A barebones node http server
+2. A logic module to play tictactoe
