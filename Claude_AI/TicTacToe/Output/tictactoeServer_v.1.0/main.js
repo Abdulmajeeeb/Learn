@@ -17,7 +17,6 @@ const http = require('node:http');
 // Each of these files knows how to handle one specific endpoint.
 const newGameRoute = require('./routes/newGame');
 const moveRoute = require('./routes/move');
-const continueRoute = require('./routes/continue');
 const boardRoute = require('./routes/board');
 const staticRoute = require('./routes/static');
 const notFoundRoute = require('./routes/404');
