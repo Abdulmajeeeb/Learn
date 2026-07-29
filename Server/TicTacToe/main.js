@@ -1,11 +1,16 @@
-const http = require('http');
-const path = require('path')
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
+
+const filePath = path.join(__dirname, "public", "index.html");
+
 const server = http.createServer(function (request, response) {
     const url = request.url;
     console.log(request.url);
     switch (url) {
         case "/":
-            response.end("Home Page");
+
+            response.end(fs.readFileSync(filePath));
             break;
         case "/about":
             response.end("About page");
