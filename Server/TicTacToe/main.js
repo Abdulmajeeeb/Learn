@@ -7,7 +7,9 @@ const script = path.join(__dirname, "public", "script.js");
 
 const server = http.createServer(function (request, response) {
     const url = request.url;
-    console.log(request.url);
+   // console.log(request.url);
+   // console.log(path.join(__dirname,"public",url));
+    console.log(url.slice(1));
     switch (url) {
         case "/":
             response.writeHead(200,{'Content-Type':'text/html'});
