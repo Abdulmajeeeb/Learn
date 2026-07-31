@@ -7,11 +7,11 @@ const game = {
 }
 
 
-function createTable() {
+function createTable(game) {
     game.board = [];
-    for (let row = 0; row < boardSize; row++) {
+    for (let row = 0; row < game.boardSize; row++) {
         let newRow = [];
-        for (let col = 0; col < boardSize; col++) {
+        for (let col = 0; col < game.boardSize; col++) {
             newRow.push("");
         }
         game.board.push(newRow);

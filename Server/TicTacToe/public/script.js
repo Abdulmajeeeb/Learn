@@ -9,6 +9,12 @@ const boardButtons = document.querySelectorAll("#types button");
 for (const button of boardButtons) {
     button.addEventListener("click", function () {
         boardSize = Number(button.dataset.size);
+        fetch("/new-game",{
+            method:"POST",
+            body:JSON.stringify({
+                boardSize:boardSize
+            })
+        })
         startGame();
     })
 };

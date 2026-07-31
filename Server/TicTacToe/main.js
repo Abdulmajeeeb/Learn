@@ -2,20 +2,30 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const logic=require('./logic');
-console.log(logic);
+
 const contentTypes = {
     ".html": "text/html",
     ".css": "text/css",
     ".js": "text/javascript",
     ".png": "image/png"
 }
-
 const index = path.join(__dirname, "public", "index.html");
-
 const server = http.createServer(function (request, response) {
     let url = request.url;
-    console.log(request.method, request.url);
+//    console.log(request.method, request.url);
 if (request.method==="POST"){
+//    console.log("POST RECIEVED")
+    let body = "";
+    request.on("data", function(chunk){
+        body+=chunk;
+    })
+    request.on("end", function(){
+//        console.log(body);
+const data=JSON.parse(body);
+logic.game.boardSize=data.boardSize;
+logic.createTable(logic.game);
+console.log(logic.game);
+    })
     if (request.url === "/move"){
         console.log("Move Route Reached");
         return;
