@@ -2,31 +2,33 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
+const contentTypes = {
+    ".html": "text/html",
+    ".css": "text/css",
+    ".js": "text/javascript",
+    ".png": "image/png"
+}
+
 const index = path.join(__dirname, "public", "index.html");
-const script = path.join(__dirname, "public", "script.js");
 
 const server = http.createServer(function (request, response) {
     const url = request.url;
-   // console.log(request.url);
-   // console.log(path.join(__dirname,"public",url));
-    console.log(url.slice(1));
-    switch (url) {
-        case "/":
-            response.writeHead(200,{'Content-Type':'text/html'});
-            response.end(fs.readFileSync(index));
-            break;
-        case "/script.js":
-            response.writeHead(200,{'Content-Type':'text/javascript'});
-            response.end(fs.readFileSync(script));
-            break;
-        case "/about":
-            response.end("About page");
-            break;
-        case "/game":
-            response.end("Game Page");
-            break;
-        default:
-            response.end("Page not found");
+    console.log(url);
+    if (url === "/") {
+        url = "/index.html";
+    }
+    const filePath = path.join(__dirname, "public", url.slice(1));
+    const extension = path.extname(filePath);
+    const contentType = contentTypes[extension] || "application/octet-stream";
+    try {
+        response.writeHead(200, {
+            "Content-Type": contentType
+        });
+        response.end(fs.readFileSync(filePath));
+    }
+    catch (error) {
+        response.writeHead(404, { 'Content-Type': 'text/html' });
+        response.end("File not found");
     }
 });
 const PORT = 3000;
